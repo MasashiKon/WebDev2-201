@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Selectors</title>
+    <style>
+      body {
+        background-color: #dbe1f5;
+        font-size: 18;
+        margin-left: 10%;
+      }
+
+      div,
+      p,
+      ul,
+      span,
+      h3,
+      a {
+        display: table-cell;
+        border-style: solid;
+        padding: 20px;
+        border-color: rgb(77, 150, 145);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      (div)
+      <a>(hyperlink)</a>
+      <span class="boldText italicText"> (span) </span>
+      <p>
+        (paragraph)
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+      </p>
+      <h3>(h3)</h3>
+      <ul>
+        (unordered list)
+      </ul>
+      <section>(section)</section>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // siblings()
+        // $("p").click(function(){
+        //     const siblingElements = $("p").siblings();
+        //     console.log(siblingElements);
+        //     siblingElements.css("border-color","#ff0");
+        // })
+
+        //next() prev()
+        // $("#next").click(function(){
+        //     const nextElement = $("span").next();
+        //     nextElement.css("border-color","#ff0");
+        // })
+        // $("#prev").click(function(){
+        //     const prevElement = $("span").prev();
+        //     prevElement.css("border-color","#f00");
+        // })
+
+        // nextAll() prevAll()
+        // $("#next").click(function () {
+        //   const nextElements = $("p").nextAll();
+        //   nextElements.css("border-color", "#ff0");
+        // });
+        // $("#prev").click(function () {
+        //   const prevElements = $("p").prevAll();
+        //   prevElements.css("border-color", "blue");
+        // });
+
+        // nextUntil / prevUntil()
+        $("#next").click(function () {
+          const nextElements = $("p").nextUntil('section');
+          nextElements.css("border-color", "#ff0");
+        });
+        $("#prev").click(function () {
+          const prevElements = $("p").prevUntil('a');
+          prevElements.css("border-color", "blue");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Selectors</title>
+    <style>
+      body {
+        background-color: #dbe1f5;
+        text-align: center;
+      }
+
+      .italicText {
+        font-style: italic;
+      }
+
+      .boldText {
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 22;
+      }
+
+      button {
+        font-size: 18;
+        text-align: center;
+        background-color: #96d1cd;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- <p class="italicText">This is a paragraph</p>
+      <button>Change Class</button> -->
+
+      <span>This <i>is</i> a span</span>
+      <p>This is a paragraph</p>
+      <input placeholder="Enter value here">
+      <br/>
+      <br/>
+      <button id="changeText">Change span text</button>
+      <button id="changeHTML">Change paragraph HTML</button>
+      <button id="changeValue">Change input value</button>
+      <br>
+      <a href="http://uselesswebsite.com">A link</a>
+      <br>
+      <button id="changeAttr">Change Link Attribute Value</button>
+    </div>
+    <script>
+      $(document).ready(function () {
+        //add/remove class
+        // $("button").click(function () {
+        //   $("p").removeClass("italicText");
+        //   $("p").addClass("boldText");
+        // });
+
+        //changing style
+        // $("p").hover(function () {
+        //   $("p").css("color","red");
+        // }, function(){
+        //   $("p").css("color", "black");
+        // });
+
+        //changing text/HTML/input values
+        $("#changeText").click(function(){
+          // const spanText = $("span").text()
+          // console.log(spanText);
+          $("span").text("<i>New text for span</i>")
+        })
+        $("#changeHTML").click(function(){
+          // const spanText = $("span").html()
+          // console.log(spanText);
+          $("p").html("<span class='boldText'>New Paragraph text</span>")
+        })
+        $("#changeValue").click(function(){
+          // const inputVal = $("input").val()
+          // console.log(inputVal);
+          $("input").val("New input value")
+        })
+        $("#changeAttr").click(function(){
+          $('a').attr("href", "http://www.hoge.com")
+        })
+
+
+      });
+    </script>
+  </body>
+</html>
