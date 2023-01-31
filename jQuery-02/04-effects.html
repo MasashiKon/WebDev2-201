@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Selectors</title>
+    <style>
+      body {
+        background-color: #dbe1f5;
+      }
+
+      div {
+        display: table-cell;
+        border-style: solid;
+        text-align: center;
+        padding: 30px;
+        font-size: 20;
+        border-color: #227c9d;
+        background-color: rgb(60, 197, 247);
+      }
+      button {
+        margin: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button> -->
+
+    <!-- <button id="fadeOut">Fade Out</button>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeToggle">Fade Toggle</button> -->
+
+    <button id="slideUp">Slide Up</button>
+    <button id="slideDown">Slide Down</button>
+    <button id="slideToggle">Slide Toggle</button>
+    <div>(div)</div>
+    <script>
+      $(document).ready(function () {
+        // $("#hideBtn").click(function(){
+        //   $("div").hide()
+        // })
+        // $("#showBtn").click(function(){
+        //   $("div").show()
+        // })
+        // $("#toggleBtn").click(function(){
+        //   $("div").toggle()
+        // })
+
+        // $("#fadeOut").click(function(){
+        //   $("div").fadeOut();
+        // })
+
+        // $("#fadeIn").click(function(){
+        //   $("div").fadeIn();
+        // })
+
+        // $("#fadeToggle").click(function(){
+        //   $("div").fadeToggle();
+        // })
+
+        $("#slideUp").click(function(){
+          $("div").slideUp()
+        })
+        $("#slideDown").click(function(){
+          $("div").slideDown()
+        })
+        $("#slideToggle").click(function(){
+          $("div").slideToggle()
+        })
+
+        $('div').click(function(){
+          $('div').animate({
+            left: '+=75px',
+            top: '+=75px',
+            width: '+=25px',
+            fontSize: '+=35px'
+          }, 1000)
+        })
+      });
+    </script>
+  </body>
+</html>
